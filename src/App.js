@@ -1,19 +1,12 @@
-import React from 'react';
+import React from "react";
+import Expenses from "./components/Expenses.js";
 
 const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1
-        className='head'
-        >Pablo's Havana Cafe</h1>
-      </header>
 
-      <div
-      className='hours'
-      ></div>
+  return (
+    <div>
     </div>
   );
-}
+};
 
 export default App;
