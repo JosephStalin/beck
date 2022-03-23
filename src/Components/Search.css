@@ -1,0 +1,27 @@
+.search {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  right: 25px;
+  top: 25px;
+
+  /* Orange */
+
+  background: #fe6847;
+  border-radius: 37.5px;
+}
+
+.icon {
+  position: absolute;
+  width: 62px;
+  height: 56px;
+
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 55px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
