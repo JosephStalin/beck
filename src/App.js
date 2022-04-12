@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
+import Story from './Components/Story'
 
 const App = () => {
-  let hello = "hello";
+
+
 
   return (
     <div>
       <Navbar></Navbar>
-      <div>{hello}</div>
+      <Story></Story>
     </div>
   );
 };

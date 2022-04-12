@@ -1,0 +1,15 @@
+.story {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.image {
+    width: 50%;
+    float: left;
+}
+
+.right {
+    padding-left: 5%;
+    width: 45%;
+    float: right;
+}
