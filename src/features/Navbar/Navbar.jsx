@@ -1,15 +1,15 @@
 import React from "react";
 
 import Search from "./Search";
-//import Logo from "./Logo.js";
+import Logo from "./Logo";
 import Categories from "./Categories";
 
 import "./Navbar.css";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <div>
-    {/* <Logo /> */}
+      <Logo />
       <Search />
       <Categories />
     </div>
