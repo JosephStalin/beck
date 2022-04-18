@@ -1,11 +1,7 @@
-import './Info.css'
+import "./Info.css";
 
-function Info(props) {
-    return (
-        <div className='info'>
-            {props.info}
-        </div>
-    )
-}
+const Info = (props) => {
+  return <div className='info'>{props.info}</div>;
+};
 
 export default Info;

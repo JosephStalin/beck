@@ -1,12 +1,15 @@
+import React from "react";
+
+import Search from "./Search";
+//import Logo from "./Logo.js";
+import Categories from "./Categories";
+
 import "./Navbar.css";
-import Search from "../Search/Search.js";
-import Logo from "./Logo.js.js";
-import Categories from "../../components/Categories.js";
 
 function Navbar() {
   return (
     <div>
-      <Logo />
+    {/* <Logo /> */}
       <Search />
       <Categories />
     </div>
