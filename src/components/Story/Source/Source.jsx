@@ -1,7 +1,9 @@
+import React from "react";
 import "./Source.css";
 
 const Source = (props) => {
-  return <div className='source'>{props.source}</div>;
+  const { source } = props;
+  return <div className='source'>{source}</div>;
 };
 
 export default Source;

@@ -1,11 +1,9 @@
-import './Summary.css'
+import React from "react";
+import "./Summary.css";
 
-function Summary(props) {
-    return (
-        <div className='summary'>
-            {props.summary}
-        </div>
-    )
-}
+const Summary = (props) => {
+  const { summary } = props;
+  return <div className='summary'>{summary}</div>;
+};
 
 export default Summary;

@@ -1,11 +1,9 @@
-import './Title.css'
+import React from "react";
+import "./Title.css";
 
-function Title(props) {
-    return (
-        <div className='title'>
-            {props.title}
-        </div>
-    )
-}
+const Title = (props) => {
+  const { title } = props;
+  return <div className='title'>{title}</div>;
+};
 
 export default Title;

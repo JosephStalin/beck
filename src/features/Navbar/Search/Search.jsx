@@ -1,6 +1,8 @@
+import React from "react";
+
 import "./Search.css";
 
-function Search() {
+const Search = () => {
   return (
     <div className='search'>
       <div className='icon'></div>
