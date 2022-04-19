@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Col, Image } from "react-bootstrap";
+import { Row, Image } from "react-bootstrap";
 
 import "./styles.css";
 
@@ -9,7 +9,7 @@ const Story = (props) => {
 
   return (
     /* TODO KYLE: https://react-bootstrap.github.io/layout/grid/ FIX THIS */
-    <Col xs={6}>
+    <Row xs={6}>
       <span >
         <Image src={story.urlToImage} alt='test' className="storyImage" />
       </span>
@@ -18,7 +18,7 @@ const Story = (props) => {
         {/* {story.title}
         {story.description} */}
       </div>
-    </Col>
+    </Row>
   );
 };
 
