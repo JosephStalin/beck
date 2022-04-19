@@ -12,7 +12,8 @@ function Expand() {
   alert("yo");
 }
 
-const Story = () => {
+const Story = (props) => {
+  const { story } = props
   let source = "CNN";
   let title = "‘Recession shock’ is coming, Bank of America warns";
   let summary = `New York

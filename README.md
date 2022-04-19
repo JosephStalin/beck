@@ -3,3 +3,5 @@
 - https://reactjs.org/
 ## Api for news data
 - https://newsapi.org/
+## Request making
+- https://axios-http.com

@@ -6,7 +6,10 @@ import Category from "./Category/Category";
 const Categories = () => {
   return (
     <div className='categories'>
-      <Category category='Whatup' />
+      <Category category='Test' />
+      <Category category='Test2' />
+      <Category category='Test3' />
+      <Category category='Test4' />
     </div>
   );
 }
