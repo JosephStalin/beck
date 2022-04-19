@@ -1,15 +1,14 @@
 .story {
-    width: 90%;
-    margin-left: 5%;
+    height: 200px;
+    width: 5%;
+    border: solid black 3px;
 }
 
-.image {
-    width: 50%;
-    float: left;
+.storyImage {
+    height: inherit;
+    width: 25%;
 }
 
-.right {
-    padding-left: 5%;
-    width: 45%;
-    float: right;
+.conten {
+    font-size: 8px;
 }

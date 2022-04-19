@@ -1,10 +1,10 @@
 import React from "react";
 
 import Search from "./Search";
-import Logo from "./Logo";
-import Categories from "./Categories";
+import Logo from "../../features/Logo";
+import Categories from "../../components/Categories";
 
-import "./Navbar.css";
+//import "./styles";
 
 const Navbar = () => {
   return (
