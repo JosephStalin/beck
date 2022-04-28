@@ -8,8 +8,8 @@ const StoryWrapper = (props) => {
   const { children } = props;
   return (
     /* Container needs margin styling */
-    <Container >
-      <Row>{children}</Row>
+    <Container className="storycontainer">
+      <Row className="storyrow">{children}</Row>
     </Container>
   );
 };

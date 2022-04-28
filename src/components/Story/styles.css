@@ -1,14 +1,71 @@
-
 .storyImage {
-    height: inherit;
-    width: 50%;
+  height: inherit;
+  vertical-align: top;
+  width: 30%;
+  padding-right: 5%;
 }
 
 .row {
-    padding: 0 5% 0 5%;
+  padding: 0 5% 0 5%;
 }
 
-.column div p:first-child {
-        color: red;
-        font-size: 18;
+.column {
+    margin: 20px 0 20px 0;
+}
+
+p {
+    margin: 0;
+}
+.summary {
+  display: inline-block;
+  width: 65%;
+}
+p.source {
+  color: #a4a4a4;
+  font-size: 18;
+}
+p.title {
+  font-size: 32px;
+}
+
+@media screen and (max-width: 1200px) {
+    p.title {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    p.title {
+        font-size: 20px;
+    }
+    p.source {
+        font-size: 10px;
+    }
+    p.description {
+        font-size: 15px;
+    }
+
+    .row {
+        padding: 0 2% 0 2% !important;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .storyImage {
+        width: 34%;
+        padding-right: 1%;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .storyImage {
+        width: 100%;
+    }
+    .column {
+        width: 100%;
+    }
+    .summary {
+        width: 100%;
+    }
 }
