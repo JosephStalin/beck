@@ -2,7 +2,7 @@ import React from "react";
 
 import Search from "./Search";
 import Logo from "../../features/Logo";
-import Categories from "../../Components/Categories";
+import Categories from "../../components/Categories";
 
 //import "./styles";
 
