@@ -1,25 +1,21 @@
-import React, { useState } from "react";
-import StoryModal from "../StoryModal";
+import React from "react";
 import { Col, Image } from "react-bootstrap";
 
 import "./styles.css";
 
 const Story = (props) => {
-  const [show, setShow] = useState(false);
-  const { story } = props;
+  const { story, showModal } = props;
 
   return (
-    /* TODO KYLE: https://react-bootstrap.github.io/layout/grid/ FIX THIS */
-    <Col className="column">
-      <div onClick={() => setShow(true)}>
-        {show ? <StoryModal setShow={setShow} /> : null}
+    <Col className='column' onClick={showModal}>
+      <div>
         <span>
-          <Image src={story.urlToImage} alt="test" className="storyImage" />
+          <Image src={story.urlToImage} alt='test' className='storyImage' />
         </span>
-        <div className="summary">
-          <p className="source">{story.source.name}</p>
-          <p className="title">{story.title}</p>
-          <p className="description">{story.description}</p>
+        <div className='summary'>
+          <p className='source'>{story.source.name}</p>
+          <p className='title'>{story.title}</p>
+          <p className='description'>{story.description}</p>
         </div>
       </div>
     </Col>

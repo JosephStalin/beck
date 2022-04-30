@@ -3,6 +3,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import Navbar from "./features/Navbar";
 import Story from "./Components/Story";
 import StoryWrapper from "./features/StoryWrapper";
+import StoryModal from "./Components/StoryModal";
 
 const axios = require("axios");
 
@@ -13,7 +14,8 @@ const instance = axios.create({
 });
 
 const App = () => {
-  const [stories, setStories] = useState(null)
+  const [stories, setStories] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const getStories = () => {
     instance({
       method: "get",
@@ -21,7 +23,7 @@ const App = () => {
       responseType: "application/json",
     }).then(function (response) {
       console.log(response.data);
-      setStories(response.data)
+      setStories(response.data);
     });
   };
 
@@ -45,10 +47,15 @@ const App = () => {
   return (
     <Fragment>
       <Navbar />
+      {/* Known bug required to set opacity for it to work
+        See: https://codehunter.cc/a/reactjs/react-bootstrap-modal-not-showing
+        TODO: Rename setShow to openModal
+       */}
+      <StoryModal show={showModal} closeModal={() => setShowModal(false)} />
       <button onClick={getStories}>Get Stories </button>
       <StoryWrapper>
-        <Story story={story} />
-        <Story story={story} />
+        <Story story={story} showModal={() => setShowModal(true)} />
+        <Story story={story} showModal={() => setShowModal(true)} />
       </StoryWrapper>
     </Fragment>
   );
