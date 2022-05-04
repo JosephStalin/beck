@@ -1,25 +1,26 @@
 import React from "react";
-
-import { Row, Image } from "react-bootstrap";
+import { Col, Image } from "react-bootstrap";
 
 import "./styles.css";
 
 const Story = (props) => {
-  const { story } = props;
+  const { story, showModal } = props;
 
   return (
-    /* TODO KYLE: https://react-bootstrap.github.io/layout/grid/ FIX THIS */
-    <Row xs={6}>
-      <span >
-        <Image src={story.urlToImage} alt='test' className="storyImage" />
-      </span>
+    <Col className='column' onClick={showModal}>
       <div>
-        {story.source.name}
-        {/* {story.title}
-        {story.description} */}
+        <span>
+          <Image src={story.urlToImage} alt='test' className='storyImage' />
+        </span>
+        <div className='summary'>
+          <p className='source'>{story.source.name}</p>
+          <p className='title'>{story.title}</p>
+          <p className='description'>{story.description}</p>
+        </div>
       </div>
-    </Row>
+    </Col>
   );
 };
 
 export default Story;
+
