@@ -5,6 +5,10 @@ import Story from "./components/Story";
 import StoryWrapper from "./features/StoryWrapper";
 import StoryModal from "./components/StoryModal";
 
+import { Spinner } from "react-bootstrap";
+
+import { map } from "ramda";
+
 const axios = require("axios");
 
 const instance = axios.create({
@@ -15,47 +19,79 @@ const instance = axios.create({
 
 const App = () => {
   const [stories, setStories] = useState(null);
+  const [modalStory, setModalStory] = useState({
+    title: null,
+    url: null,
+  });
   const [showModal, setShowModal] = useState(false);
+
   const getStories = () => {
     instance({
       method: "get",
-      url: "top-headlines/sources?",
+      url: "top-headlines?country=us",
       responseType: "application/json",
     }).then(function (response) {
-      console.log(response.data);
-      setStories(response.data);
+      setStories(response.data.articles);
     });
   };
 
-  const story = {
-    source: {
-      id: null, //Likely not null, can do something here
-      name: "seattlepi.com",
+  useEffect(() => {
+    getStories();
+  }, []);
+
+  /*
+  {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Jessie Yeung, CNN",
+      "title": "Hong Kong's next leader is a hardline former police officer who took on the city's protesters - CNN",
+      "description": "As night fell, chaos erupted when crowds of protesters outside Hong Kong's legislative building hurled bottles at police, who fired pepper spray and swung batons, dragging some people to the ground.",
+      "url": "https://www.cnn.com/2022/05/07/asia/john-lee-hong-kong-chief-executive-intl-hnk-dst/index.html",
+      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220505015429-john-lee-hk-0429-super-tease.jpg",
+      "publishedAt": "2022-05-07T23:39:00Z",
+      "content": "Hong Kong (CNN)As night fell, chaos erupted when crowds of protesters outside Hong Kong's legislative building hurled bottles at police, who fired pepper spray and swung batons, dragging some people … [+13353 chars]"
     },
-    author: "By TOM KRISHER and MATT O'BRIEN, AP Business Writers",
-    title: "Shareholders await Musk's next move in Twitter takeover bid",
-    description:
-      "DETROIT (AP) — Twitter has dropped a major roadblock in front of Elon Musk’s effort to take over the company, leaving investors to wonder about the mercurial Tesla CEO’s next move.\nThe social media company has adopted a “poison pill” defense that makes it dif…",
-    url: "https://www.seattlepi.com/news/article/Twitter-says-poison-pill-makes-coercive-17087916.php",
-    urlToImage:
-      "https://s.hdnux.com/photos/01/25/15/77/22339535/3/rawImage.jpg",
-    publishedAt: "2022-04-18T22:21:51Z",
-    content:
-      "DETROIT (AP) Twitter has dropped a major roadblock in front of Elon Musks effort to take over the company, leaving investors to wonder about the mercurial Tesla CEOs next move.The social media compan… [+5259 chars]",
+   */
+
+  const openStoryModal = (story) => {
+    setShowModal(true);
+    setModalStory(story);
+  };
+
+  const storyContainer = (story) => {
+    return (
+      <Story
+        key={story.publishedAt}
+        story={story}
+        showModal={() => {
+          openStoryModal(story);
+        }}
+      />
+    );
+  };
+
+  const displayStories = () => {
+    return map(storyContainer, stories);
   };
 
   return (
     <Fragment>
       <Navbar />
-      {/* Known bug required to set opacity for it to work
-        See: https://codehunter.cc/a/reactjs/react-bootstrap-modal-not-showing
-        TODO: Rename setShow to openModal
-       */}
-      <StoryModal show={showModal} closeModal={() => setShowModal(false)} />
-      <button onClick={getStories}>Get Stories </button>
+      <StoryModal
+        show={showModal}
+        closeModal={() => setShowModal(false)}
+        story={modalStory}
+      />
       <StoryWrapper>
-        <Story story={story} showModal={() => setShowModal(true)} />
-        <Story story={story} showModal={() => setShowModal(true)} />
+        {stories ? (
+          displayStories()
+        ) : (
+          <Spinner animation='border' role='status'>
+            <span className='visually-hidden'>Loading...</span>
+          </Spinner>
+        )}
       </StoryWrapper>
     </Fragment>
   );

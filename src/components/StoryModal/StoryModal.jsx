@@ -10,14 +10,16 @@ import {
 } from "react-bootstrap";
 
 const StoryModal = (props) => {
-  const { closeModal, show } = props;
+  const { closeModal, show, story } = props;
 
   return (
     <Modal show={show} onClick={closeModal} style={{ opacity: 1 }}>
       <ModalHeader>
-        <ModalTitle>Modal heading</ModalTitle>
+        <ModalTitle>{story.title}</ModalTitle>
       </ModalHeader>
-      <ModalBody>bruh</ModalBody>
+      <ModalBody>
+        <iframe src={story.url} title={story.title}></iframe>
+      </ModalBody>
       <ModalFooter>
         <Button variant='secondary' onClick={closeModal}>
           Close
