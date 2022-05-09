@@ -13,7 +13,7 @@ const StoryModal = (props) => {
   const { closeModal, show } = props;
 
   return (
-    <Modal show={show} onClick={closeModal} style={{ opacity: 1 }}>
+    <Modal show={show} onClick={closeModal} style={{ opacity: 1 }} className='modal'>
       <ModalHeader>
         <ModalTitle>Modal heading</ModalTitle>
       </ModalHeader>

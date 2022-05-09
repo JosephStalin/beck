@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 import Navbar from "./features/Navbar";
-import Story from "./components/Story";
+import Story from "./Components/Story";
 import StoryWrapper from "./features/StoryWrapper";
-import StoryModal from "./components/StoryModal";
+import StoryModal from "./Components/StoryModal";
 
 const axios = require("axios");
 
