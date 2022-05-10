@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 import Navbar from "./features/Navbar";
-import Story from "./Components/Story";
+import Story from "./components/Story";
 import StoryWrapper from "./features/StoryWrapper";
-import StoryModal from "./Components/StoryModal";
+import StoryModal from "./components/StoryModal";
 
 import { Spinner } from "react-bootstrap";
 
@@ -88,6 +88,7 @@ const App = () => {
         {stories ? (
           displayStories()
         ) : (
+          /* This doesnt show the spinner properly - swap the turnary and style it */
           <Spinner animation='border' role='status'>
             <span className='visually-hidden'>Loading...</span>
           </Spinner>

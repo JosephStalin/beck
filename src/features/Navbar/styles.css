@@ -1,0 +1,14 @@
+#categories-container {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#logo-search-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    justify-content: space-around;
+}

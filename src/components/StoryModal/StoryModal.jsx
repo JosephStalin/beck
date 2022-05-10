@@ -1,5 +1,5 @@
 import React from "react";
-import './styles.css';
+import "./styles.css";
 
 import {
   Modal,
@@ -12,21 +12,32 @@ import {
 
 const StoryModal = (props) => {
   const { closeModal, show, story } = props;
-  const fullscreen = true;
 
   return (
-    <Modal show={show} onClick={closeModal} style={{ opacity: 1 }} dialogClassName='yea' fullscreen={fullscreen}>
-      <ModalHeader >
-        <ModalTitle>{story.title}</ModalTitle>
-      </ModalHeader>
-      <ModalBody className="body">
-        <iframe src={story.url} title={story.title}></iframe>
-      </ModalBody>
-      <ModalFooter>
-        <Button variant='secondary' onClick={closeModal}>
-          Close
-        </Button>
-      </ModalFooter>
+    <Modal
+      size='lg'
+      show={show}
+      onClick={closeModal}
+      style={{ opacity: 1 }}
+      fullscreen='xl-down'
+    >
+      <div className='modal-alignment-helper'>
+        <div className='vertical-align-center'>
+          <div className='modal-content'>
+            <ModalHeader>
+              <ModalTitle>{story.title}</ModalTitle>
+            </ModalHeader>
+            <ModalBody className='body'>
+              <iframe src={story.url} title={story.title} />
+            </ModalBody>
+            <ModalFooter>
+              <Button variant='secondary' onClick={closeModal}>
+                Close
+              </Button>
+            </ModalFooter>
+          </div>
+        </div>
+      </div>
     </Modal>
   );
 };

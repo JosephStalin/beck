@@ -1,14 +1,5 @@
 .search {
-  position: absolute;
-  width: 75px;
-  height: 75px;
-  right: 25px;
-  top: 25px;
-
-  /* Orange */
-
-  background: #fe6847;
-  border-radius: 37.5px;
+  justify-self: flex-end;
 }
 
 .icon {

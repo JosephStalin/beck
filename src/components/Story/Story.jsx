@@ -1,16 +1,19 @@
 import React from "react";
-import { Col, Image } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import backupImage from "../../assets/images/putin.jpg";
 
 import "./styles.css";
 
 const Story = (props) => {
   const { story, showModal } = props;
 
+  const storyImage = story.urlToImage ? story.urlToImage : backupImage;
+
   return (
     <Col className='column' onClick={showModal}>
       <div>
         <span>
-          <Image src={story.urlToImage} alt='test' className='storyImage' />
+          <img src={storyImage} alt='' className='storyImage backgroundImage' />
         </span>
         <div className='summary'>
           <p className='source'>{story.source.name}</p>
@@ -23,4 +26,3 @@ const Story = (props) => {
 };
 
 export default Story;
-
