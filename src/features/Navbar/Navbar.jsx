@@ -3,21 +3,17 @@ import React from "react";
 import Search from "./Search";
 import Logo from "./Logo";
 import Categories from "./Categories";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import "./styles.css";
 
 const Navbar = () => {
   return (
     <React.Fragment>
-      <Row id='logo-search-container'>
-        <div>
-          <Logo />
-        </div>
-        <div>
-          <Search />
-        </div>
-      </Row>
+      <Col id='logo-search-container'>
+        <Logo />
+        <Search />
+      </Col>
       <Row id='categories-container'>
         <Categories />
       </Row>

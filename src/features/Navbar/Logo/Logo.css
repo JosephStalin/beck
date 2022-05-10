@@ -1,18 +1,10 @@
 .logo {
-  justify-self: flex-start;
-  height: 75px;
-  padding-top: .1em;
-  margin: 0;
-
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 64px;
-  line-height: 75px;
-  /* identical to box height */
 
   /* Primary Blue */
-
   color: #57b8ff;
 }
 

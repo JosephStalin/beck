@@ -6,9 +6,6 @@
 
 #logo-search-container {
     display: flex;
-    flex-direction: row;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 0 1em;
 }

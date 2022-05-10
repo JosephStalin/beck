@@ -1,18 +1,4 @@
-.search {
-  justify-self: flex-end;
-}
-
-.icon {
-  position: absolute;
-  width: 62px;
-  height: 56px;
-
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 55px;
-  /* identical to box height */
-
-  color: #ffffff;
+#search {
+  padding-top: 2.4em;
+  width: 30em;
 }
