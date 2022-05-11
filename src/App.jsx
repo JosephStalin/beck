@@ -62,6 +62,7 @@ const App = () => {
 
   const storyContainer = (story) => {
     return (
+      <div>
       <Story
         key={story.publishedAt}
         story={story}
@@ -69,6 +70,8 @@ const App = () => {
           openStoryModal(story);
         }}
       />
+      <hr/>
+      </div>
     );
   };
 
@@ -78,7 +81,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <Navbar />
+      <Navbar instance={instance} setStories={setStories}/>
       <StoryModal
         show={showModal}
         closeModal={() => setShowModal(false)}

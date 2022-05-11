@@ -7,12 +7,13 @@ import { Row, Col } from "react-bootstrap";
 
 import "./styles.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { instance, setStories } = props;
   return (
     <React.Fragment>
       <Col id='logo-search-container'>
         <Logo />
-        <Search />
+        <Search instance={instance} setStories={setStories} />
       </Col>
       <Row id='categories-container'>
         <Categories />

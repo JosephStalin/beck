@@ -16,8 +16,8 @@ const Story = (props) => {
           <img src={storyImage} alt='' className='storyImage backgroundImage' />
         </span>
         <div className='summary'>
-          <p className='source'>{story.source.name}</p>
           <p className='title'>{story.title}</p>
+          <p className='source'>{story.source.name}</p>
           <p className='description'>{story.description}</p>
         </div>
       </div>
