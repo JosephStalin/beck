@@ -1,44 +1,49 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
+import React, { useState, useCallback } from "react";
+import { Form, InputGroup, FormControl } from "react-bootstrap";
 
-/* Kyle,
-look at liveshare chat - just use that. See if you can fix the modal centering
- */
-import "./Search.css";
+import "./styles.css";
+
+const axios = require("axios");
+
+const instance = axios.create({
+  baseURL: "https://newsapi.org/v2/",
+  timeout: 1000,
+  headers: { "X-Api-Key": "4e0353c6745b4a54b37392c40b5cb661" },
+});
 
 
 const Search = (props) => {
-
-  
-   const axios = require("axios");
-
-  const instance = axios.create({
-    baseURL: "https://newsapi.org/v2/",
-    timeout: 1000,
-    headers: { "X-Api-Key": "4e0353c6745b4a54b37392c40b5cb661" },
-  });
-
   const { setStories } = props;
-  const [apiString, setApiString] = useState('')
-  const Bruh = (event) => {
-    const q = event.target.search.value;
-    console.log(event);
-    const url = "top-headlines?" + {q}
+  const [queryString, setQueryString] = useState("");
 
+  const onQueryChange = ({target:{value}}) => setQueryString(value);
+
+  const onSearchSubmit = (e) => {
+    e.preventDefault();
     instance({
       method: "get",
-      url: {url},
+      url: `top-headlines?q=${queryString}`,
       responseType: "application/json",
     }).then(function (response) {
       setStories(response.data.articles);
     });
-  }
+  };
 
   return (
     <div id='search'>
-      <Form  onSubmit={(event) => Bruh(event)}>
-        <Form.Control type='text' placeholder='Search...' name='search' className="form-control form-icon-trailing">
-        </Form.Control>
+      <Form
+        onSubmit={(e) => {
+          onSearchSubmit(e);
+        }}
+      >
+        <Form.Control
+          type='text'
+          placeholder='Search...'
+          name='search'
+          value={queryString}
+          onChange={onQueryChange}
+          className='form-control form-icon-trailing'
+        />
       </Form>
     </div>
   );
