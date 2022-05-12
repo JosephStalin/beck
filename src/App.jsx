@@ -12,7 +12,7 @@ import { map } from "ramda";
 const axios = require("axios");
 
 const instance = axios.create({
-  baseURL: "https://newsapi.org/v2/",
+  baseURL: "https://newsapi.org/v2",
   timeout: 1000,
   headers: { "X-Api-Key": "4e0353c6745b4a54b37392c40b5cb661" },
 });
@@ -63,25 +63,29 @@ const App = () => {
   const storyContainer = (story) => {
     return (
       <div>
-      <Story
-        key={story.publishedAt}
-        story={story}
-        showModal={() => {
-          openStoryModal(story);
-        }}
-      />
-      <hr/>
+        <Story
+          key={story.publishedAt}
+          story={story}
+          showModal={() => {
+            openStoryModal(story);
+          }}
+        />
+        <hr />
       </div>
     );
   };
 
   const displayStories = () => {
-    return map(storyContainer, stories);
+    if (stories.length > 1) {
+      return map(storyContainer, stories);
+    } else {
+      return <div>No Stories Found</div>;
+    }
   };
 
   return (
     <Fragment>
-      <Navbar instance={instance} setStories={setStories}/>
+      <Navbar instance={instance} setStories={setStories} />
       <StoryModal
         show={showModal}
         closeModal={() => setShowModal(false)}

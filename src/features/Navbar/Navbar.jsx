@@ -16,7 +16,7 @@ const Navbar = (props) => {
         <Search instance={instance} setStories={setStories} />
       </Col>
       <Row id='categories-container'>
-        <Categories />
+        <Categories instance={instance} setStories={setStories} />
       </Row>
     </React.Fragment>
   );
