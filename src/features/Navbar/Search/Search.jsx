@@ -16,8 +16,6 @@ const Search = (props) => {
   const { setStories } = props;
   const [queryString, setQueryString] = useState("");
 
-  const onQueryChange = ({target:{value}}) => setQueryString(value);
-
   const onSearchSubmit = (e) => {
     e.preventDefault();
     instance({
@@ -41,7 +39,7 @@ const Search = (props) => {
           placeholder='Search...'
           name='search'
           value={queryString}
-          onChange={onQueryChange}
+          onChange={({target:{value}}) => setQueryString(value)}
           className='form-control form-icon-trailing'
           autoComplete="off"
         />
