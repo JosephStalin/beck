@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from "react";
-import { Form, InputGroup, FormControl } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 import "./styles.css";
 
@@ -43,6 +43,7 @@ const Search = (props) => {
           value={queryString}
           onChange={onQueryChange}
           className='form-control form-icon-trailing'
+          autoComplete="off"
         />
       </Form>
     </div>
