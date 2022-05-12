@@ -1,12 +1,17 @@
 import React from "react";
 
-import "./Category.css";
+import "./styles.css";
 
 const Category = (props) => {
-  const { category } = props;
+  const { category, handleCategoryClick } = props;
   return (
-    <div className='category'>
-      <p>{category}</p>
+    <div
+      className='category'
+      onClick={(e) => {
+        handleCategoryClick(e, category.searchString);
+      }}
+    >
+      <p>{category.title}</p>
     </div>
   );
 };
