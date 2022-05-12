@@ -1,7 +1,7 @@
 # News Api Engineering Capstone
-## Bootstrapped using React
-- https://reactjs.org/
-## Api for news data
-- https://newsapi.org/
-## Request making
-- https://axios-http.com
+## Bootstrapped With
+- [React](https://reactjs.org/)
+- [Bootstrap](https://react-bootstrap.netlify.app/)
+- [Axios](https://axios-http.com/)
+## News Data Source
+- [News Api](https://newsapi.org/)
