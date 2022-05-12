@@ -1,3 +1,42 @@
-.modal {
-    margin-top: 50px;
+.modal .body iframe {
+    width: 100%;
+}
+
+.modal-main {
+    bottom: 0;
+}
+
+
+.modal .modal-dialog {
+    display: block;
+    bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    transition: none;
+    transform: translate(0) !important;
+    height: 100%;
+}
+
+.modal-fade .modal-dialog {
+    transform: translate(0) !important;
+}
+
+.modal-content {
+    height: 100%;
+}
+
+.modal-body {
+    height: 90vh;
+}
+
+.modal-header {
+    height: 10vh;
+}
+
+.modal-title {
+    display: inline-block;
+}
+
+.btn {
+    float: right;  
 }

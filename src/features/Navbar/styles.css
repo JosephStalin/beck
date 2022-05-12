@@ -1,0 +1,11 @@
+#categories-container {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#logo-search-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1em;
+}

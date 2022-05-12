@@ -1,19 +1,25 @@
 import React from "react";
 
 import Search from "./Search";
-import Logo from "../../features/Logo";
-import Categories from "../../Components/Categories";
+import Logo from "./Logo";
+import Categories from "./Categories";
+import { Row, Col } from "react-bootstrap";
 
-//import "./styles";
+import "./styles.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { instance, setStories } = props;
   return (
-    <div>
-      <Logo />
-      <Search />
-      <Categories />
-    </div>
+    <React.Fragment>
+      <Col id='logo-search-container'>
+        <Logo />
+        <Search instance={instance} setStories={setStories} />
+      </Col>
+      <Row id='categories-container'>
+        <Categories />
+      </Row>
+    </React.Fragment>
   );
-}
+};
 
 export default Navbar;

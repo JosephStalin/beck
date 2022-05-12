@@ -2,7 +2,7 @@
   height: inherit;
   vertical-align: top;
   width: 30%;
-  padding-right: 5%;
+  margin-right: 5%;
 }
 
 .row {
@@ -26,6 +26,7 @@ p.source {
 }
 p.title {
   font-size: 32px;
+  margin-top: -5.355px;
 }
 
 @media screen and (max-width: 1200px) {
