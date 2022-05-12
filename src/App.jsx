@@ -85,7 +85,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <Navbar instance={instance} setStories={setStories} />
+      <Navbar instance={instance} setStories={setStories} getStories={getStories} />
       <StoryModal
         show={showModal}
         closeModal={() => setShowModal(false)}

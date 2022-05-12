@@ -11,3 +11,11 @@
 .logo span {
   color: #2176ae;
 }
+
+.logo button {
+  background-color: rgb(0,0,0,0);
+  border: none;
+  color: #57b8ff;
+  color: none;
+  text-decoration: none;
+}

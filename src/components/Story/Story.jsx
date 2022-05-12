@@ -1,6 +1,6 @@
 import React from "react";
 import { Col } from "react-bootstrap";
-import backupImage from "../../assets/images/putin.jpg";
+import backupImage from "../../assets/images/news-default.jpeg";
 
 import "./styles.css";
 

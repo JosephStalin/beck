@@ -8,11 +8,11 @@ import { Row, Col } from "react-bootstrap";
 import "./styles.css";
 
 const Navbar = (props) => {
-  const { instance, setStories } = props;
+  const { instance, setStories, getStories } = props;
   return (
     <React.Fragment>
       <Col id='logo-search-container'>
-        <Logo />
+        <Logo getStories={getStories} />
         <Search instance={instance} setStories={setStories} />
       </Col>
       <Row id='categories-container'>

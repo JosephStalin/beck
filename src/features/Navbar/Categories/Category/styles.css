@@ -1,13 +1,15 @@
 .category {
   /* Category */
 
-  width: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
-
+  margin: 0 5px 0 5px;
+  padding: 0 5px 0 5px;
   color: #ffffff;
   text-align: center;
   display: flex;
@@ -16,6 +18,7 @@
 
 .category:hover {
   background-color: #57b8ff;
+  cursor: pointer;
 }
 
 .category p {
